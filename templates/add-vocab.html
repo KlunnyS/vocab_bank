@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+
+{% block title %} Add Vocab {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4 ">Add Vocab</h2>
+    <form method="POST" class="card p-4 shadow-sm">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.kanji_list.label(class='form-label') }}
+            {{ form.kanji_list(class='form-control') }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.vocab.label(class="form-label") }}
+            {{ form.vocab(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.translation.label(class="form-label") }}
+            {{ form.translation(class="form-control") }}
+        </div>
+
+        {{ form.submit(class='btn btn-primary') }}
+    </form>
+</div>
+
+{% endblock %}

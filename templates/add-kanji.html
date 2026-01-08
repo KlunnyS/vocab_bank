@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+
+{% block title %} Add Kanji {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4 ">Add Kanji</h2>
+    <form method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.kanji.label(class='form-label fw-semibold') }}
+            {{ form.kanji(class='form-control') }}
+        </div>
+
+        <div class="mb-4">
+            {{ form.stroke_order.label(class="form-label fw-semibold") }}
+            {{ form.stroke_order(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.level.label(class='form-label fw-semibold') }}
+            {{ form.level(class='form-select') }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.meanings.label(class='form-label fw-semibold') }}
+            {{ form.meanings(class='form-control') }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.kun.label(class='form-label fw-semibold') }}
+            {{ form.kun(class='form-control') }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.on.label(class='form-label fw-semibold') }}
+            {{ form.on(class='form-control') }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.radical.label(class='form-label fw-semibold') }}
+            {{ form.radical(class='form-control') }}
+        </div>
+        <div class="mb-3">
+            {{ form.submit(class='btn btn-primary') }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

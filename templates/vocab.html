@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% block title %}
+Vocab for {{ kanji }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Vocabulary for {{ kanji }}</h1>
+    {% if vocab %}
+    <table class="table table-borderd align-middle table-striped-columns">
+        <thead class="table-dark">
+            <tr>
+                <td>Word (Kanji)</td>
+                <td>Word (Hiragana)</td>
+                <td>Translation</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in vocab %}
+            <tr>
+                <td>{{ word.kanji_list }}</td>
+                <td>{{ word.vocab }}</td>
+                <td>{{ word.translation }}</td>
+                <td><a href="{{ url_for('edit_vocab',vocab_id = word.id) }}" class="btn btn-primary btn-sm"><i
+                            class="fa-solid fa-pen"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-danger"><strong>NO VOCAB FOR {{ kanji }}!!!</strong></div>
+    {% endif %}
+</div>
+
+{% endblock %}

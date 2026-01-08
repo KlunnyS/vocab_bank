@@ -1,0 +1,10 @@
+Name: Flask-SQLAlchemy
+Version: 3.1.1
+Summary: Add SQLAlchemy support to your Flask application.
+Home-page: 
+Author: 
+Author-email: 
+License: 
+Location: C:\Users\NevøelaTadeáš\AppData\Roaming\Python\Python313\site-packages
+Requires: flask, sqlalchemy
+Required-by: 
